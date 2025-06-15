@@ -1,0 +1,1077 @@
+@prefix : <http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix base: <http://www.semanticweb.org/ontologies/StudentsAsProducts#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#> .
+
+<http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#CareerEventAttendance
+:CareerEventAttendance rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Student ;
+                       rdfs:range :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#FeedbackProvision
+:FeedbackProvision rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Student ;
+                   rdfs:range :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#InternshipParticipation
+:InternshipParticipation rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Student ;
+                         rdfs:range :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#JobApplication
+:JobApplication rdf:type owl:ObjectProperty ;
+                rdfs:domain :Student ;
+                rdfs:range :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#matchingPosition
+:matchingPosition rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Student ;
+                  rdfs:range :Employer ;
+                  rdfs:label "Matching position between student and employer" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#suitableInternship
+:suitableInternship rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Student ;
+                    rdfs:range :Employer .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#hasProfile
+base:hasProfile rdf:type owl:ObjectProperty ;
+                rdfs:domain base:Student ;
+                rdfs:range base:Profile .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#isMatchedWith
+base:isMatchedWith rdf:type owl:ObjectProperty ;
+                   rdfs:domain base:Student ;
+                   rdfs:range base:JobOffer .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#postsJob
+base:postsJob rdf:type owl:ObjectProperty ;
+              rdfs:domain base:Employer ;
+              rdfs:range base:JobOffer .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#requiresProfile
+base:requiresProfile rdf:type owl:ObjectProperty ;
+                     rdfs:domain base:JobOffer ;
+                     rdfs:range base:Profile .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#CVandCoverLetterhelp
+:CVandCoverLetterhelp rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#GPA
+:GPA rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Student ,
+                 :academicInfo ;
+     rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Student ,
+                 :personalData ;
+     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#candidateEvaluation
+:candidateEvaluation rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Employer ,
+                                 :Student ,
+                                 :feedback ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerAmbitions
+:careerAmbitions rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Student ,
+                             :careerGoals ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerFairs
+:careerFairs rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Relationships ,
+                         :careerEvents ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerPaths
+:careerPaths rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Employer ,
+                         :careerDevelopmentOpportunities ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#certifications
+:certifications rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Student ,
+                            :skillsAndCompetencies ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#companyName
+:companyName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Employer ,
+                         :companyInfo ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#completedCourses
+:completedCourses rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Student ,
+                              :academicInfo ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#contactInfo
+:contactInfo rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Student ,
+                         :personalData ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#corporateCulture
+:corporateCulture rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Employer ,
+                              :careerDevelopmentOpportunities ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#currentCourses
+:currentCourses rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Student ,
+                            :academicInfo ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#desiredPositions
+:desiredPositions rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Student ,
+                              :careerGoals ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#employerFeedback
+:employerFeedback rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Employer ,
+                              :Student ,
+                              :feedback ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#experience
+:experience rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Employer ,
+                        :jobRequirements ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#extracurricularActivities
+:extracurricularActivities rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Student ,
+                                       :academicInfo ;
+                           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#gender
+:gender rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Student ,
+                    :personalData ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#hiringHistory
+:hiringHistory rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Employer ,
+                           :Student ,
+                           :feedback ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#industry
+:industry rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Employer ,
+                      :companyInfo ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#internshipEvaluation
+:internshipEvaluation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Relationships ,
+                                  :internshipsAndPractices ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#interviewPreparation
+:interviewPreparation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Relationships ,
+                                  :professionalRealizationSupport ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Employer ,
+                      :companyInfo ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#major
+:major rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Student ,
+                   :academicInfo ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Student ,
+                  :personalData ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#numberOfEmployees
+:numberOfEmployees rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Employer ,
+                               :companyInfo ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#partnershipProgram
+:partnershipProgram rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Relationships ,
+                                :internshipsAndPractices ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#positionDescription
+:positionDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Employer ,
+                                 :jobRequirements ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#preferredIndustry
+:preferredIndustry rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Student ,
+                               :careerGoals ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#professionalRealizationSupport
+:professionalRealizationSupport rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Relationships ,
+                                            :professionalRealizationSupport ;
+                                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#projectsAndResearches
+:projectsAndResearches rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Student ,
+                                   :skillsAndCompetencies ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#requiredEducation
+:requiredEducation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Employer ,
+                               :jobRequirements ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#requiredSkills
+:requiredSkills rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Employer ,
+                            :jobRequirements ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#selfAssessment
+:selfAssessment rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Employer ,
+                            :Student ,
+                            :feedback ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#softSkills
+:softSkills rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Student ,
+                        :skillsAndCompetencies ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#teacherFeedback
+:teacherFeedback rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Employer ,
+                             :Student ,
+                             :feedback ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#technicalSkills
+:technicalSkills rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Student ,
+                             :skillsAndCompetencies ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#trainingOpportunities
+:trainingOpportunities rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Employer ,
+                                   :careerDevelopmentOpportunities ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#workMeetings
+:workMeetings rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Relationships ,
+                          :careerEvents ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#yearOfStudy
+:yearOfStudy rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Student ,
+                         :academicInfo ;
+             rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Employer
+:Employer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Relationships
+:Relationships rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Student
+:Student rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#academicInfo
+:academicInfo rdf:type owl:Class ;
+              rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerDevelopmentOpportunities
+:careerDevelopmentOpportunities rdf:type owl:Class ;
+                                rdfs:subClassOf :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerEvents
+:careerEvents rdf:type owl:Class ;
+              rdfs:subClassOf :Relationships .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#careerGoals
+:careerGoals rdf:type owl:Class ;
+             rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#companyInfo
+:companyInfo rdf:type owl:Class ;
+             rdfs:subClassOf :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#feedback
+:feedback rdf:type owl:Class ;
+          rdfs:subClassOf :Employer ,
+                          :Student .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#internshipsAndPractices
+:internshipsAndPractices rdf:type owl:Class ;
+                         rdfs:subClassOf :Relationships .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#jobRequirements
+:jobRequirements rdf:type owl:Class ;
+                 rdfs:subClassOf :Employer .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#personalData
+:personalData rdf:type owl:Class ;
+              rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#professionalRealizationSupport
+:professionalRealizationSupport rdf:type owl:Class ;
+                                rdfs:subClassOf :Relationships .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#skillsAndCompetencies
+:skillsAndCompetencies rdf:type owl:Class ;
+                       rdfs:subClassOf :Student .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#Employer
+base:Employer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#JobOffer
+base:JobOffer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#Profile
+base:Profile rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/StudentsAsProducts#Student
+base:Student rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#BioTechFrontier
+:BioTechFrontier rdf:type owl:NamedIndividual ,
+                          :Employer ,
+                          :careerDevelopmentOpportunities ,
+                          :companyInfo ;
+                 :careerPaths "Bioinformatics Scientist, Molecular Biologist, Bioprocess Engineer" ;
+                 :companyName "BioTech Frontier" ;
+                 :corporateCulture "Innovation-driven, Collaborative Research, Ethical Biotech Development" ;
+                 :industry "Biotechnology" ;
+                 :location "Plovdiv" ;
+                 :numberOfEmployees "120"^^xsd:int ;
+                 :trainingOpportunities "Advanced Genomics Workshops, Bioinformatics Bootcamps, Industry Conferences" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Borislav_Petkov
+:Borislav_Petkov rdf:type owl:NamedIndividual ,
+                          :Student ,
+                          :academicInfo ,
+                          :careerGoals ,
+                          :personalData ,
+                          :skillsAndCompetencies ;
+                 :GPA "5.7"^^xsd:float ;
+                 :age "22"^^xsd:int ;
+                 :completedCourses "Digital Communications, Network Security" ;
+                 :currentCourses "5G Technologies, IoT Communications" ;
+                 :desiredPositions "Telecommunications Engineer" ;
+                 :gender "male" ;
+                 :major "Telecommunications" ;
+                 :name "Borislav Petkov" ;
+                 :preferredIndustry "Wireless Communications" ;
+                 :softSkills "problem-solving, adaptability" ;
+                 :technicalSkills "Network Protocols, SDN" ;
+                 :yearOfStudy "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#CyberShield
+:CyberShield rdf:type owl:NamedIndividual ,
+                      :Employer ,
+                      :careerDevelopmentOpportunities ,
+                      :companyInfo ;
+             :careerPaths "Security Analyst, Penetration Tester, Security Architect" ;
+             :companyName "CyberShield Securities" ;
+             :corporateCulture "Security-focused, Ethical hacking, Continuous improvement" ;
+             :industry "Cybersecurity" ;
+             :location "Varna" ;
+             :numberOfEmployees "100"^^xsd:int ;
+             :trainingOpportunities "Cybersecurity certifications, Ethical hacking workshops, Security conferences" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Elitsa_Dimitrova
+:Elitsa_Dimitrova rdf:type owl:NamedIndividual ,
+                           :Student ,
+                           :academicInfo ,
+                           :careerGoals ,
+                           :personalData ,
+                           :skillsAndCompetencies ;
+                  :suitableInternship :BioTechFrontier ;
+                  :GPA "5.75"^^xsd:float ;
+                  :age "24"^^xsd:int ;
+                  :completedCourses "Genetic Engineering, Fermentation Technology" ;
+                  :currentCourses "Biopharmaceuticals, Industrial Biotechnology" ;
+                  :desiredPositions "Biotechnology Researcher" ;
+                  :gender "female" ;
+                  :major "Biotechnology" ;
+                  :name "Elitsa Dimitrova" ;
+                  :preferredIndustry "Pharmaceutical Biotechnology" ;
+                  :softSkills "laboratory management, scientific writing" ;
+                  :technicalSkills "PCR, Cell Culture, CRISPR" ;
+                  :yearOfStudy "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Georgi_Georgiev
+:Georgi_Georgiev rdf:type owl:NamedIndividual ,
+                          :Employer ,
+                          :Relationships ,
+                          :Student ,
+                          :academicInfo ,
+                          :careerGoals ,
+                          :feedback ,
+                          :internshipsAndPractices ,
+                          :personalData ,
+                          :skillsAndCompetencies ;
+                 :InternshipParticipation :TechInnovate ;
+                 :JobApplication :TechInnovate ;
+                 :GPA "5.75"^^xsd:float ;
+                 :age "22"^^xsd:int ;
+                 :candidateEvaluation "Excellent performance" ;
+                 :careerAmbitions "develop different software applications" ;
+                 :certifications "Oracle Certified Professional" ;
+                 :completedCourses "programing 1, programing 2" ;
+                 :contactInfo "georgi.g@abv.bg" ;
+                 :currentCourses "mathematics" ;
+                 :desiredPositions "Software Engineer" ;
+                 :employerFeedback "Excellent worker" ;
+                 :extracurricularActivities "sport" ;
+                 :gender "male" ;
+                 :internshipEvaluation "Excellent performance in software development" ;
+                 :major "Computer Science" ;
+                 :name "Georgi Georgiev" ;
+                 :preferredIndustry "information technology" ;
+                 :projectsAndResearches "Research in algorithms" ;
+                 :selfAssessment "want to find new challenges" ;
+                 :softSkills "work in team, communication" ;
+                 :teacherFeedback "Excellent student" ;
+                 :technicalSkills "python, java" ;
+                 :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#GreenEnergyTech
+:GreenEnergyTech rdf:type owl:NamedIndividual ,
+                          :Employer ,
+                          :careerDevelopmentOpportunities ,
+                          :companyInfo ;
+                 :careerPaths "Solar Energy Engineer, Wind Turbine Designer, Energy Systems Analyst" ;
+                 :companyName "GreenEnergy Tech" ;
+                 :corporateCulture "Environmentally Conscious, Innovation in Sustainability, Global Impact Focus" ;
+                 :industry "Renewable Energy" ;
+                 :location "Varna" ;
+                 :numberOfEmployees "120"^^xsd:int ;
+                 :trainingOpportunities "Renewable Energy Certifications, Sustainability Workshops, Green Tech Symposiums" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Internship1
+:Internship1 rdf:type owl:NamedIndividual ,
+                      :Relationships ,
+                      :internshipsAndPractices ;
+             :internshipEvaluation "Excellent performance in software development" ;
+             :partnershipProgram "Summer Internship 2024" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Internship2
+:Internship2 rdf:type owl:NamedIndividual ,
+                      :Relationships ,
+                      :internshipsAndPractices ;
+             :internshipEvaluation "Very good analytical and research skills" ;
+             :partnershipProgram "Research Program 2024" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Internship3
+:Internship3 rdf:type owl:NamedIndividual ,
+                      :Relationships ,
+                      :internshipsAndPractices ;
+             :internshipEvaluation "Strong technical skills and teamwork" ;
+             :partnershipProgram "Technical Internship 2024" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Ivan_Petrov
+:Ivan_Petrov rdf:type owl:NamedIndividual ,
+                      :Employer ,
+                      :Relationships ,
+                      :Student ,
+                      :academicInfo ,
+                      :careerGoals ,
+                      :feedback ,
+                      :internshipsAndPractices ,
+                      :personalData ,
+                      :skillsAndCompetencies ;
+             :InternshipParticipation :CyberShield ;
+             :JobApplication :CyberShield ;
+             :GPA "5.5"^^xsd:float ;
+             :age "21"^^xsd:int ;
+             :candidateEvaluation "Strong technical background" ;
+             :completedCourses "Programming Basics, Data Structures" ;
+             :currentCourses "Algorithms, Database Systems" ;
+             :desiredPositions "Software Developer" ;
+             :gender "male" ;
+             :internshipEvaluation "Strong technical skills and teamwork" ;
+             :major "Computer Science" ;
+             :name "Ivan Petrov" ;
+             :preferredIndustry "Information Technology" ;
+             :softSkills "teamwork, problem-solving" ;
+             :technicalSkills "Java, Python, SQL" ;
+             :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Kaloyan_Dimitrov
+:Kaloyan_Dimitrov rdf:type owl:NamedIndividual ,
+                           :Student ,
+                           :academicInfo ,
+                           :careerGoals ,
+                           :personalData ,
+                           :skillsAndCompetencies ;
+                  :GPA "5.7"^^xsd:float ;
+                  :age "24"^^xsd:int ;
+                  :completedCourses "Aerodynamics, Propulsion Systems" ;
+                  :currentCourses "Space Systems Design, Satellite Communications" ;
+                  :desiredPositions "Aerospace Engineer" ;
+                  :gender "male" ;
+                  :major "Aerospace Engineering" ;
+                  :name "Kaloyan Dimitrov" ;
+                  :preferredIndustry "Space Technology" ;
+                  :softSkills "project management, analytical thinking" ;
+                  :technicalSkills "MATLAB, CAD, CFD" ;
+                  :yearOfStudy "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Kristina_Petrova
+:Kristina_Petrova rdf:type owl:NamedIndividual ,
+                           :Student ,
+                           :academicInfo ,
+                           :careerGoals ,
+                           :personalData ,
+                           :skillsAndCompetencies ;
+                  :GPA "5.8"^^xsd:float ;
+                  :age "22"^^xsd:int ;
+                  :completedCourses "Anatomy, Biomechanics" ;
+                  :currentCourses "Medical Imaging, Tissue Engineering" ;
+                  :desiredPositions "Biomedical Device Engineer" ;
+                  :gender "female" ;
+                  :major "Biomedical Engineering" ;
+                  :name "Kristina Petrova" ;
+                  :preferredIndustry "Medical Technology" ;
+                  :softSkills "innovation, ethical consideration" ;
+                  :technicalSkills "MATLAB, 3D Bioprinting" ;
+                  :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Maria_Ivanova
+:Maria_Ivanova rdf:type owl:NamedIndividual ,
+                        :Employer ,
+                        :Relationships ,
+                        :Student ,
+                        :academicInfo ,
+                        :careerGoals ,
+                        :feedback ,
+                        :internshipsAndPractices ,
+                        :personalData ,
+                        :skillsAndCompetencies ;
+               :InternshipParticipation :QuantumLeap ;
+               :JobApplication :QuantumLeap ;
+               :GPA "5.75"^^xsd:float ;
+               :age "22"^^xsd:int ;
+               :candidateEvaluation "Very good analytical skills" ;
+               :completedCourses "Statistics, Machine Learning" ;
+               :currentCourses "Big Data Analytics, Deep Learning" ;
+               :desiredPositions "Data Analyst" ;
+               :gender "female" ;
+               :internshipEvaluation "Very good analytical and research skills" ;
+               :major "Data Science" ;
+               :name "Maria Ivanova" ;
+               :preferredIndustry "Finance" ;
+               :softSkills "analytical thinking, data visualization" ;
+               :technicalSkills "Python, R, TensorFlow" ;
+               :yearOfStudy "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#NanoTechInnovations
+:NanoTechInnovations rdf:type owl:NamedIndividual ,
+                              :Employer ,
+                              :careerDevelopmentOpportunities ,
+                              :companyInfo ;
+                     :careerPaths "Nanomaterials Researcher, Nanodevice Engineer, Nanotech Product Developer" ;
+                     :companyName "NanoTech Innovations" ;
+                     :corporateCulture "Innovation-driven, Collaborative Research, Cutting-edge Technology Focus" ;
+                     :industry "Nanotechnology" ;
+                     :location "Sofia" ;
+                     :numberOfEmployees "75"^^xsd:int ;
+                     :trainingOpportunities "Advanced Microscopy Workshops, Nanofabrication Courses, Industry Conferences" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Petar_Petrov
+:Petar_Petrov rdf:type owl:NamedIndividual ,
+                       :Student ,
+                       :academicInfo ,
+                       :careerGoals ,
+                       :personalData ,
+                       :skillsAndCompetencies ;
+              :GPA "5.6"^^xsd:float ;
+              :age "22"^^xsd:int ;
+              :completedCourses "Mechanics, Electronics" ;
+              :currentCourses "AI for Robotics, Control Systems" ;
+              :desiredPositions "Robotics Engineer" ;
+              :gender "male" ;
+              :major "Robotics" ;
+              :name "Petar Petrov" ;
+              :preferredIndustry "Automation" ;
+              :softSkills "problem-solving, teamwork" ;
+              :technicalSkills "C++, ROS, Arduino" ;
+              :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#QuantumLeap
+:QuantumLeap rdf:type owl:NamedIndividual ,
+                      :Employer ,
+                      :careerDevelopmentOpportunities ,
+                      :companyInfo ;
+             :careerPaths "Quantum Researcher, Quantum Algorithm Developer, Quantum Hardware Engineer" ;
+             :companyName "QuantumLeap Research" ;
+             :corporateCulture "Cutting-edge research, Academic collaboration, Continuous learning" ;
+             :industry "Quantum Computing" ;
+             :location "Plovdiv" ;
+             :numberOfEmployees "50"^^xsd:int ;
+             :trainingOpportunities "Quantum workshops, International conferences, Collaborative research projects" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Ralitsa_Ivanova
+:Ralitsa_Ivanova rdf:type owl:NamedIndividual ,
+                          :Student ,
+                          :academicInfo ,
+                          :careerGoals ,
+                          :personalData ,
+                          :skillsAndCompetencies ;
+                 :matchingPosition :BioTechFrontier ;
+                 :GPA "5.85"^^xsd:float ;
+                 :age "23"^^xsd:int ;
+                 :completedCourses "Thermodynamics, Reaction Engineering" ;
+                 :currentCourses "Process Control, Sustainable Chemical Processes" ;
+                 :desiredPositions "Process Engineer" ;
+                 :gender "female" ;
+                 :major "Chemical Engineering" ;
+                 :name "Ralitsa Ivanova" ;
+                 :preferredIndustry "Green Chemistry" ;
+                 :softSkills "process optimization, safety consciousness" ;
+                 :technicalSkills "Aspen Plus, COMSOL" ;
+                 :yearOfStudy "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Silvia_Ivanova
+:Silvia_Ivanova rdf:type owl:NamedIndividual ,
+                         :Student ,
+                         :academicInfo ,
+                         :careerGoals ,
+                         :personalData ,
+                         :skillsAndCompetencies ;
+                :GPA "5.85"^^xsd:float ;
+                :age "21"^^xsd:int ;
+                :completedCourses "Genomics, Proteomics" ;
+                :currentCourses "Systems Biology, Computational Drug Design" ;
+                :desiredPositions "Bioinformatics Researcher" ;
+                :gender "female" ;
+                :major "Bioinformatics" ;
+                :name "Silvia Ivanova" ;
+                :preferredIndustry "Pharmaceutical" ;
+                :softSkills "data analysis, critical thinking" ;
+                :technicalSkills "Python, R, BLAST" ;
+                :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Stefan_Todorov
+:Stefan_Todorov rdf:type owl:NamedIndividual ,
+                         :Student ,
+                         :academicInfo ,
+                         :careerGoals ,
+                         :personalData ,
+                         :skillsAndCompetencies ;
+                :GPA "5.55"^^xsd:float ;
+                :age "23"^^xsd:int ;
+                :completedCourses "Environmental Chemistry, Waste Management" ;
+                :currentCourses "Renewable Energy Systems, Climate Change Mitigation" ;
+                :desiredPositions "Environmental Consultant" ;
+                :gender "male" ;
+                :major "Environmental Engineering" ;
+                :name "Stefan Todorov" ;
+                :preferredIndustry "Sustainable Development" ;
+                :softSkills "sustainability awareness, interdisciplinary collaboration" ;
+                :technicalSkills "GIS, Environmental Modeling" ;
+                :yearOfStudy "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#TechInnovate
+:TechInnovate rdf:type owl:NamedIndividual ,
+                       :Employer ,
+                       :careerDevelopmentOpportunities ,
+                       :companyInfo ;
+              :careerPaths "Junior Developer, Senior Developer, Team Lead" ;
+              :companyName "TechInnovate Solutions" ;
+              :corporateCulture "Innovative, Collaborative, Flexible work hours" ;
+              :industry "Information Technology" ;
+              :location "Sofia" ;
+              :numberOfEmployees "250"^^xsd:int ;
+              :trainingOpportunities "Online courses, Tech conferences, Mentorship programs" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Tech_Company
+:Tech_Company rdf:type owl:NamedIndividual ,
+                       :Employer ,
+                       :companyInfo ;
+              :companyName "Tech Company" .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Teodora_Georgieva
+:Teodora_Georgieva rdf:type owl:NamedIndividual ,
+                            :Student ,
+                            :academicInfo ,
+                            :careerGoals ,
+                            :personalData ,
+                            :skillsAndCompetencies ;
+                   :suitableInternship :NanoTechInnovations ;
+                   :GPA "5.95"^^xsd:float ;
+                   :age "20"^^xsd:int ;
+                   :completedCourses "Quantum Mechanics, Materials Science" ;
+                   :currentCourses "Nanoelectronics, Nanomaterials" ;
+                   :desiredPositions "Nanotechnology Researcher" ;
+                   :gender "female" ;
+                   :major "Nanotechnology" ;
+                   :name "Teodora Georgieva" ;
+                   :preferredIndustry "Advanced Materials" ;
+                   :softSkills "attention to detail, research orientation" ;
+                   :technicalSkills "LabVIEW, Electron Microscopy" ;
+                   :yearOfStudy "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Viktor_Ivanov
+:Viktor_Ivanov rdf:type owl:NamedIndividual ,
+                        :Student ,
+                        :academicInfo ,
+                        :careerGoals ,
+                        :personalData ,
+                        :skillsAndCompetencies ;
+               :GPA "5.65"^^xsd:float ;
+               :age "21"^^xsd:int ;
+               :completedCourses "Microcontrollers, Sensors and Actuators" ;
+               :currentCourses "Industrial Automation, Robotics" ;
+               :desiredPositions "Automation Engineer" ;
+               :gender "male" ;
+               :major "Mechatronics" ;
+               :name "Viktor Ivanov" ;
+               :preferredIndustry "Smart Manufacturing" ;
+               :softSkills "systems thinking, troubleshooting" ;
+               :technicalSkills "PLC Programming, AutoCAD" ;
+               :yearOfStudy "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/kst/ontologies/2024/6/untitled-ontology-7#Yavor_Georgiev
+:Yavor_Georgiev rdf:type owl:NamedIndividual ,
+                         :Student ,
+                         :academicInfo ,
+                         :careerGoals ,
+                         :personalData ,
+                         :skillsAndCompetencies ;
+                :GPA "5.6"^^xsd:float ;
+                :age "21"^^xsd:int ;
+                :completedCourses "Nuclear Physics, Reactor Theory" ;
+                :currentCourses "Radiation Protection, Nuclear Fuel Cycle" ;
+                :desiredPositions "Nuclear Safety Engineer" ;
+                :gender "male" ;
+                :major "Nuclear Engineering" ;
+                :name "Yavor Georgiev" ;
+                :preferredIndustry "Nuclear Energy" ;
+                :softSkills "safety-first mindset, attention to detail" ;
+                :technicalSkills "Monte Carlo Simulation, Radiation Detection" ;
+                :yearOfStudy "3"^^xsd:int .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:e rdf:type swrl:Variable .
+
+:o rdf:type swrl:Variable .
+
+:p rdf:type swrl:Variable .
+
+:s rdf:type swrl:Variable .
+
+:pos rdf:type swrl:Variable .
+
+:paths rdf:type swrl:Variable .
+
+:m rdf:type swrl:Variable .
+
+:i rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Правило за съответствие между желана позиция и студентски профил" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Employer ;
+                           swrl:argument1 :e
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate base:postsJob ;
+                                      swrl:argument1 :e ;
+                                      swrl:argument2 :o
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate base:requiresProfile ;
+                                                 swrl:argument1 :o ;
+                                                 swrl:argument2 :p
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:ClassAtom ;
+                                                            swrl:classPredicate :Student ;
+                                                            swrl:argument1 :s
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate base:hasProfile ;
+                                                                       swrl:argument1 :s ;
+                                                                       swrl:argument2 :p
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate base:isMatchedWith ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :o
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Правило за съответствие между желани позиции и свободни места" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Student ;
+                           swrl:argument1 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate :desiredPositions ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :pos
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate :Employer ;
+                                                 swrl:argument1 :e
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate :careerPaths ;
+                                                            swrl:argument1 :e ;
+                                                            swrl:argument2 :paths
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                                       swrl:builtin swrlb:containsIgnoreCase ;
+                                                                       swrl:arguments ( :paths
+                                                                                        :pos
+                                                                                      )
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :matchingPosition ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :e
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Правило за намиране на подходящи стажове според специалността" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Student ;
+                           swrl:argument1 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate :major ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :m
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate :Employer ;
+                                                 swrl:argument1 :e
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate :industry ;
+                                                            swrl:argument1 :e ;
+                                                            swrl:argument2 :i
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                                       swrl:builtin swrlb:containsIgnoreCase ;
+                                                                       swrl:arguments ( :i
+                                                                                        :m
+                                                                                      )
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :suitableInternship ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :e
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+
